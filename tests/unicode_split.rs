@@ -42,14 +42,8 @@ fn full_test_unicode_split() -> tantivy::Result<()> {
     let actual = top_docs
         .into_iter()
         .map(|x| {
-            searcher
-                .doc(x.1)
-                .unwrap()
-                .get_first(title)
-                .unwrap()
-                .as_text()
-                .unwrap()
-                .to_string()
+            let doc: TantivyDocument = searcher.doc(x.1).unwrap();
+            doc.get_first(title).unwrap().as_str().unwrap().to_string()
         })
         .collect::<HashSet<_>>();
 

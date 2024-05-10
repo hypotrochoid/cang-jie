@@ -10,7 +10,7 @@ readme = "README.MD"
 keywords = ["search", "tokenizer", "Chinese", "tantivy"]
 
 [dependencies]
-tantivy = "0.21.1"
+tantivy = "0.22"
 jieba-rs = { version = "0.6.8", default-features = false }
 log = "0.4.20"
 
